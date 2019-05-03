@@ -1,0 +1,31 @@
+{
+  "name": "smash-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "smash-service": "app.js"
+  },
+  "scripts": {
+    "start": "node bin/app",
+    "dev": "nodemon bin/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "module-alias": "^2.2.0",
+    "mongoose": "^5.5.5"
+  },
+  "_moduleAliases": {
+    "@": "src",
+    "@sdk": "./.sdk",
+    "@controller": "src/controller",
+    "@model": "src/model.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}

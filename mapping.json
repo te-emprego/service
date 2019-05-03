@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "service-base",
+    "version": "1.0.0",
+    "routes": [
+      {
+        "path": "/test/:id",
+        "method": "get",
+        "description": "Testing route",
+        "_private": {
+          "controller": "testing",
+          "params": ["params.id", "user", { "name": "batata", "default": "tomate" }]
+        }
+      },
+      {
+        "path": "/batata",
+        "method": "get",
+        "description": "Testing batata",
+        "_private": {
+          "controller": "batata",
+          "params": []
+        }
+      }
+    ]
+  }
+}

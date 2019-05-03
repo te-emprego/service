@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@sdk/*": ["./.sdk/*"],
+      "@/*": ["./src/*"],
+      "@controller/*": ["./src/controller/*"],
+      "@model": ["./src/model.js"],
+    }
+  }
+}
