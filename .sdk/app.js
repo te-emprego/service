@@ -13,12 +13,14 @@ app.use((req, res, next) => {
   next()
 })
 
+const port = process.env.PORT || 3000
+
 app.init = function () {
-  this.listen(3000, (err) => {
+  this.listen(port, (err) => {
     if (err) {
       return console.log('Error on service boot: ' + err.message)
     }
-    console.log('Service started at: http://localhost:3000')
+    console.log(`Service started at: http://localhost:${port}`)
   })
 }
 
