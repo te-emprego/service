@@ -9,7 +9,7 @@
         "description": "Testing route",
         "_private": {
           "controller": "testing",
-          "params": ["params.id", "user", { "name": "batata", "default": "tomate" }]
+          "params": ["params.id"]
         }
       },
       {

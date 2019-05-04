@@ -7,15 +7,6 @@ const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// fake user middleware
-app.use((req, res, next) => {
-  req.user = {
-    name: 'Daniel Bonifacio',
-    id: 'qoiaskdnalkdj1290381'
-  }
-  next()
-})
-
 const port = process.env.PORT || 3000
 const conn = process.env.MONGO_DB
 
