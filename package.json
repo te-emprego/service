@@ -1,10 +1,10 @@
 {
-  "name": "smash-service",
+  "name": "te-emprego-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "smash-service": "app.js"
+    "te-emprego-service": "app.js"
   },
   "scripts": {
     "start": "node bin/app",
