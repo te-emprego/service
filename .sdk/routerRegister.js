@@ -1,4 +1,5 @@
 const mapping = require('../mapping.json')
+const response = require('./response')
 const { get, has } = require('lodash')
 
 const getParams = (params, req) => {
@@ -18,10 +19,10 @@ const getParams = (params, req) => {
   return p
 }
 
-const routeWrapper = (controller, params) => async (req, res, next) => {
-  controller(...getParams(params, req))
-    .then(data => res.send({ data }))
-    .catch(err => res.send({ message: err.message }))
+const routeWrapper = (method, { params, controller }) => async (req, res, next) => {
+  method(...getParams(params, req))
+    .then(data => response._.mount(data, res))
+    .catch(error => response._.serverError(error, res, controller))
 }
 
 const registerSingleRoute = (route, router) => {
@@ -29,7 +30,7 @@ const registerSingleRoute = (route, router) => {
 
   const controller = require('../src/controller/' + _private.controller)
   
-  router[method](path, routeWrapper(controller, _private.params))
+  router[method](path, routeWrapper(controller, _private))
 }
 
 const routerRegister = (app) => {
