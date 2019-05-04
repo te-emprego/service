@@ -1,11 +1,6 @@
 const { User } = require('@model')
 
-module.exports = async (id) => {
-  const message = 'testing' + id
-  const data = await User.find()
-
-  return {
-    message,
-    data,
-  }
-}
+module.exports = async (id) => ({
+  message: 'testing' + id,
+  data: await User.find(),
+})
