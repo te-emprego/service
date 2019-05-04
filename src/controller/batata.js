@@ -1,1 +1,1 @@
-module.exports = async () => ({ data: 'batata' })
+module.exports = async () => ({ data: 'batata' });
