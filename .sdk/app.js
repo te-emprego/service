@@ -1,5 +1,6 @@
 const express = require('express')
 const routerRegister = require('./routerRegister')
+const database = require('./database')
 
 const app = express()
 
@@ -16,14 +17,20 @@ app.use((req, res, next) => {
 })
 
 const port = process.env.PORT || 3000
+const conn = process.env.MONGO_DB
 
 app.boot = function () {
-  routerRegister(this)
-  this.listen(port, (err) => {
+  database.connect(conn, (err) => {
     if (err) {
-      return console.log('Error on service boot: ' + err.message)
+      return console.log('Erro during database connection: ' + err.message)
     }
-    console.log(`Service started at: http://localhost:${port}`)
+    routerRegister(this)
+    this.listen(port, (err) => {
+      if (err) {
+        return console.log('Error on service boot: ' + err.message)
+      }
+      console.log(`Service started at: http://localhost:${port}`)
+    })
   })
 }
 
