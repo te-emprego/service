@@ -1,8 +1,6 @@
 require('module-alias/register')
 require('dotenv').config()
 
-const { app, routerRegister } = require('@sdk')
+const { app } = require('@sdk')
 
-routerRegister(app)
-
-app.init()
+app.boot()
