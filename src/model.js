@@ -1,4 +1,4 @@
-const { Schema, model } = require('sdk/database');
+const { Schema, model } = require('@sdk/database');
 
 const UserSchema = new Schema({
   name: {
