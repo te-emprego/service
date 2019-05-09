@@ -10,12 +10,12 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 const conn = process.env.MONGO_DB;
 
-app.boot = function () {
+app.boot = function (mapping) {
   database.connect(conn, (err) => {
     if (err) {
       return console.log(`Erro during database connection: ${err.message}`);
     }
-    routerRegister(this);
+    routerRegister(this, mapping);
     this.listen(port, (err) => {
       if (err) {
         return console.log(`Error on service boot: ${err.message}`);

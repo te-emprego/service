@@ -1,6 +1,7 @@
-require('module-alias/register')
-require('dotenv').config()
+require('module-alias/register');
+require('dotenv').config();
+const mapping = require('../mapping.json');
 
-const { app } = require('@sdk')
+const { app } = require('@sdk');
 
-app.boot()
+app.boot(mapping);

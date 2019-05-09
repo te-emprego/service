@@ -1,6 +1,5 @@
 /* eslint-disable global-require */
 const { get, has } = require('lodash');
-const mapping = require('../mapping.json');
 const response = require('./response');
 
 const getParams = (source, req) => {
@@ -36,7 +35,7 @@ const registerSingleRoute = (route, router) => {
   router[method](path, routeWrapper(controller, _private));
 };
 
-const routerRegister = (app) => {
+const routerRegister = (app, mapping) => {
   mapping.app.routes
     .forEach(route => registerSingleRoute(route, app));
 };
