@@ -2,23 +2,24 @@ const res = {
   send(data, status = 2000) {
     return {
       status,
-      data
-    }
+      data,
+    };
   },
   _: {
     mount(info, res) {
-      const { data, status } = info
+      const { data, status } = info;
       return res
         .status(status)
-        .send(data)
+        .send(data);
     },
     serverError(error, res, controller) {
-      const { message } = error
+      const { message } = error;
+      console.log(`${controller} has Error: ${message}`);
       res
         .status(500)
-        .send({ message })
-    }
-  }
-}
+        .send({ message });
+    },
+  },
+};
 
-module.exports = res
+module.exports = res;
