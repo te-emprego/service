@@ -1,7 +1,11 @@
 const { User } = require('@model');
-const { res } = require('@sdk');
+const { res, log } = require('@sdk');
 
-module.exports = async id => res.send({
-  message: `testing${id}`,
-  data: await User.find(),
-}, 200);
+module.exports = async (id) => {
+  log.info(`Requested id: ${id}`);
+
+  return res.send({
+    message: `testing: ${id}`,
+    data: await User.find(),
+  }, 200);
+};
