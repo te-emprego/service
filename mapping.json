@@ -4,13 +4,13 @@
     "version": "1.0.1",
     "routes": [
       {
-        "path": "/test/:id",
+        "path": "/:name",
         "method": "get",
         "public": true,
-        "description": "Testing route",
+        "description": "Displays 'Hello, ${name || 'World'}'",
         "_private": {
           "controller": "testing",
-          "params": ["params.id"]
+          "params": ["params.name"]
         }
       }
     ]
