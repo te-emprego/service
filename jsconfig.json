@@ -5,7 +5,7 @@
       "@sdk/*": ["./.sdk/*"],
       "@/*": ["./src/*"],
       "@controller/*": ["./src/controller/*"],
-      "@model": ["./src/model.js"],
+      "@model": ["./src/model.js"]
     }
   }
 }
