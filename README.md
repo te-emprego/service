@@ -1,0 +1,2 @@
+# service
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2b19785d4344488f80c80f509e6c2e02)](https://app.codacy.com/app/te-emprego/service?utm_source=github.com&utm_medium=referral&utm_content=te-emprego/service&utm_campaign=Badge_Grade_Settings)
