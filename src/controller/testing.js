@@ -1,5 +1,5 @@
 const { User } = require('@model');
-const { res, log } = require('@sdk');
+const { res, log } = require('te-emprego-sdk');
 
 module.exports = async (id) => {
   log.info(`Requested id: ${id}`);
