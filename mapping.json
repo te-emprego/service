@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "service-base",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "routes": [
       {
         "path": "/test/:id",
@@ -11,15 +11,6 @@
         "_private": {
           "controller": "testing",
           "params": ["params.id"]
-        }
-      },
-      {
-        "path": "/batata",
-        "method": "get",
-        "description": "Testing batata",
-        "_private": {
-          "controller": "batata",
-          "params": []
         }
       }
     ]
